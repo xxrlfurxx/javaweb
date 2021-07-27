@@ -1,0 +1,507 @@
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 15px;
+    }
+
+     /* 다시 1열로 바꾸고 flex justify이용해서 반응형 레이아웃 기초 만들기 */
+    body {
+      background-image: url(./background.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      background-size: 1515px;
+      width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 50px 0;
+
+    }
+
+    nav {
+      background-color: white;
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 10px;
+      text-align: center;
+      margin: -9px 0;
+
+    }
+
+    nav li {
+      display: inline-block;
+      margin-left: 5rem;
+
+    }
+
+    nav li:first-child {
+      margin-left: 0;
+    }
+
+    .main-image {
+      padding: 0;
+      margin: 1.2rem -0.8rem;
+
+    }
+
+    article {
+      background-color: #cae9ff;
+      padding: 0 16px;
+      width: calc(100% - 200px - 1rem);
+      float: left;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    section {
+      margin-bottom: 100px;
+    }
+
+    section:last-child {
+      margin-bottom: 0px;
+    }
+
+    h1 {
+      background-color: #1B4965;
+      color: #ffffff;
+    }
+
+    h1::before {
+      content: "";
+    }
+
+    h1::after {
+      content: "";
+    }
+
+    h2 {
+      background-color: #5FA8D3;
+      color: black;
+      font-size: 1.5rem;
+      padding: 0.3rem;
+      margin: 0 -16px 20px -16px;
+    }
+
+    #menu-1::before {
+      content: "🥘 "
+    }
+
+    #menu-1::after {
+      content: " 🥘"
+    }
+
+    #menu-2::before {
+      content: "🦀 "
+    }
+
+    #menu-2::after {
+      content: " 🦀"
+    }
+
+    #menu-3::before {
+      content: "🍗 "
+    }
+
+    #menu-3::after {
+      content: " 🍗"
+    }
+
+    a:visited {
+      color: rebeccapurple;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      font-size: 115%
+    }
+
+    h3 {
+      padding-left: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .my-hr1 {
+      border: 0;
+      height: 2px;
+      background: black;
+    }
+
+    .my-hr2 {
+      border: 0;
+      height: 2px;
+      background: black;
+    }
+
+    .my-hr3 {
+      border: 0;
+      height: 2px;
+      background: black;
+    }
+
+    .memo::before {
+      content: "📌 ";
+    }
+
+    .memo::after {
+      content: " 📌";
+    }
+
+    img {
+      border-radius: 25px;
+      padding: 0 0.5rem;
+    }
+
+    .list::before {
+      content: "📝 "
+    }
+
+    .list::after {
+      content: " 📝"
+    }
+
+    p::first-letter {
+      font-size: 1.3rem;
+
+    }
+
+
+    ol {
+      list-style: none;
+      padding: 0%;
+      padding-left: 0.5rem;
+      text-align: left;
+    }
+
+    ol li {
+      counter-increment: rint;
+      font-size: 0.9rem;
+    }
+
+    ol li::before {
+      content: counter(rint) ".   ";
+      border: 1px solid black;
+      border-radius: 50%;
+      margin-left: 0.5rem;
+      padding-left: 0.5rem;
+
+    }
+
+    ul {
+      padding: 0;
+      padding-left: 1.4rem;
+    }
+
+    li {
+      padding-top: 3px;
+    }
+
+    p {
+      padding-left: 0.5rem;
+    }
+
+    table {
+      background-color: white;
+      border-collapse: collapse;
+      width: 98%;
+      border: 1 inset black;
+      margin: auto;
+      text-align: center;
+    }
+
+    thead>tr {
+      background-color: green;
+      color: white;
+
+    }
+
+    th {
+      padding: 5px;
+    }
+
+    td {
+      padding: 5px;
+    }
+
+    aside {
+
+      width: 200px;
+      float: left;
+      position: sticky;
+      top: 4.5rem;
+      text-shadow: 5px 5px 5px black;
+    }
+
+    footer {
+      clear: both;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>내가 좋아하는 요리 레시피</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#menu-1">된장찌개</a></li>
+      <li><a href="#menu-2">양념게장</a></li>
+      <li><a href="#menu-3">찜닭</a></li>
+    </ul>
+  </nav>
+  <div class="main-image"> <a href="https://www.10000recipe.com/recipe/6941907" target="_blank"><img width="100%"
+        height="300px"
+        src="https://recipe1.ezmember.co.kr/cache/recipe/2020/09/15/0ad20e7cbcf3af74342e89c58b8dade81.png"></a></div>
+  <article>
+    <section>
+      <h2><a href="https://www.10000recipe.com/recipe/6859263" id="menu-1" target="_blank">된장찌개</a></h2>
+      <img width="100%" heigth="auto"
+        src="https://recipe1.ezmember.co.kr/cache/recipe/2016/10/27/462f2e2c70a260e044c4450bc18e6f651.jpg">
+      <p>매콤 된장찌개, 채소와 두부만 넣은 초간단 초스피드 된장찌개</p>
+      <h3 class="list">재료목록</h3>
+      <hr class="my-hr1">
+      <table border="1">
+        <thead>
+          <tr>
+            <th><strong>재료</strong></th>
+            <th><strong>용량</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>느타리버섯</strong></td>
+            <td><em>1줌</em></td>
+          </tr>
+          <tr>
+            <td><strong>양파</strong></td>
+            <td><em>1/2개</em></td>
+          </tr>
+          <tr>
+            <td><strong>애호박</strong></td>
+            <td><em>1/4개</em></td>
+          </tr>
+          <tr>
+            <td><strong>청양고추</strong></td>
+            <td><em>2개</em></td>
+          </tr>
+          <tr>
+            <td><strong>두부</strong></td>
+            <td><em>1/4모</em></td>
+          </tr>
+          <tr>
+            <td><strong>물</strong></td>
+            <td><em>1.5종이컵</em></td>
+          </tr>
+          <tr>
+            <td><strong>된장</strong></td>
+            <td><em>2T</em></td>
+          </tr>
+          <tr>
+            <td><strong>진간장</strong></td>
+            <td><em>1T</em></td>
+          </tr>
+          <tr>
+            <td><strong>고추가루</strong></td>
+            <td><em>1.5T</em></td>
+          </tr>
+          <tr>
+            <td><strong>다진마늘</strong></td>
+            <td><em>0.5T</em></td>
+          </tr>
+          <tr>
+            <td><strong>설탕</strong></td>
+            <td><em>0.5티스푼</em></td>
+          </tr>
+          <tr>
+            <td><strong>소금</strong></td>
+            <td><em>마지막간</em></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="memo">조리 순서</h3>
+      <ol>
+        <li>물1.5종이컵에 된장,고추가루,다진마늘,설탕,간장을 한데넣고 한소끔 끓여줍니다.</li>
+        <li>그사이 양파,버섯,애호박,청양고추,두부는 적당한 크기로 썰어줍니다.</li>
+        <li>한소끔 끓은 된장물에 양파,버섯,애호박,청양고추,두부를 넣어 줍니다.</li>
+        <li>애호박이 익을때까지 끓여주어 간을보아 부족한간은 소금으로 해주어 완성.</li>
+      </ol>
+    </section>
+    <section>
+      <h2><a href="https://www.10000recipe.com/recipe/6928700" id="menu-2" target="_blank">양념게장</a></h2>
+      <img width="100%" height="auto"
+        src="https://recipe1.ezmember.co.kr/cache/recipe/2020/03/16/633841880879ac80f442a14e6047a4bb1.jpg">
+      <p>밥도둑 0순위! 비린내 없이 양념게장 만들기 ★</p>
+      <h3 class="list">재료 목록</h3>
+      <hr class="my-hr2">
+      <table border="1">
+        <thead>
+          <tr>
+            <th><strong>재료</strong></th>
+            <th><strong>용량</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>꽃게</strong></td>
+            <td><em>450g</em></td>
+          </tr>
+          <tr>
+            <td><strong>양파</strong></td>
+            <td><em>1/4개</em></td>
+          </tr>
+          <tr>
+            <td><strong>청양고추</strong></td>
+            <td><em>1개</em></td>
+          </tr>
+          <tr>
+            <td><strong>대파</strong></td>
+            <td><em>1/2대</em></td>
+          </tr>
+          <tr>
+            <td><strong>통깨</strong></td>
+            <td><em>약간</em></td>
+          </tr>
+          <tr>
+            <td><strong>고춧가루</strong></td>
+            <td><em>5숟가락</em></td>
+          </tr>
+          <tr>
+            <td><strong>간장</strong></td>
+            <td><em>3숟가락</em></td>
+          </tr>
+          <tr>
+            <td><strong>다진 마늘</strong></td>
+            <td><em>1숟가락</em></td>
+          </tr>
+          <tr>
+            <td><strong>맛술</strong></td>
+            <td><em>1숟가락</em></td>
+          </tr>
+          <tr>
+            <td><strong>고추장</strong></td>
+            <td><em>2숟가락</em></td>
+          </tr>
+          <tr>
+            <td><strong>올리고당</strong></td>
+            <td><em>2숟가락</em></td>
+          </tr>
+          <tr>
+            <td><strong>설탕</strong></td>
+            <td><em>1숟가락</em></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="memo">조리 순서</h3>
+      <ol>
+        <li>양파는 채 썰고 대파와 청양고추는 어슷 썬다.</li>
+        <li>볼에 양념 재료를 넣고 양념장을 만든다.</li>
+        <li>볼에 꽃게, 채소, 양념장을 넣고 버무린다.</li>
+        <li>통깨를 뿌려 완성한다.</li>
+      </ol>
+    </section>
+    <section>
+      <h2><a href="https://www.10000recipe.com/recipe/6636695" id="menu-3" target="_blank">찜닭</a></h2>
+
+      <img width="100%" height="auto"
+        src="https://recipe1.ezmember.co.kr/cache/recipe/2015/04/08/ec8cb19e30ed2f69b47eff8a83b5e2121.jpg">
+      <p>실패없는 찜닭 황금레시피</p>
+      <h3 class="list">재료목록</h3>
+      <hr class="my-hr3">
+      <table border="1">
+        <thead>
+          <tr>
+            <th><strong>재료</strong></th>
+            <th><strong>용량</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>닭</strong></td>
+            <td><em>1마리</em></td>
+          </tr>
+          <tr>
+            <td><strong>당면</strong></td>
+            <td><em>1줌(400g)</em></td>
+          </tr>
+          <tr>
+            <td><strong>당근</strong></td>
+            <td><em>1/3개</em></td>
+          </tr>
+          <tr>
+            <td><strong>양파</strong></td>
+            <td><em>1/4개</em></td>
+          </tr>
+          <tr>
+            <td><strong>감자</strong></td>
+            <td><em>1개</em></td>
+          </tr>
+          <tr>
+            <td><strong>대파</strong></td>
+            <td><em>1줌</em></td>
+          </tr>
+          <tr>
+            <td><strong>간장</strong></td>
+            <td><em>13큰 술</em></td>
+          </tr>
+          <tr>
+            <td><strong>커피가루</strong></td>
+            <td><em>1큰 술</em></td>
+          </tr>
+          <tr>
+            <td><strong>설탕</strong></td>
+            <td><em>3큰 술</em></td>
+          </tr>
+          <tr>
+            <td><strong>올리고당</strong></td>
+            <td><em>6큰 술</em></td>
+          </tr>
+          <tr>
+            <td><strong>다진마늘</strong></td>
+            <td><em>3큰 술</em></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="memo">조리 순서</h3>
+      <ol>
+        <li>뻣뻣한 당면 한줌을 4-50분 정도 물에 담가 부들부들해질때까지 담궈놔주세요.</li>
+        <li>기름기가 많은 닭의 목과 꽁무니의 기름덩어리를 칼로 잘라내주시면 됩니다.</li>
+        <li>양파와 당근, 감자는 도톰하니 썰어주고 감자는 물에 담가 전분기를 빼주세요.</li>
+        <li>손질한 닭을 넣고 물 4컵, 간장13큰술, 커피가루1큰술을 넣고 끓여주세요.</li>
+        <li>밑간한 물이 끓어 오르면서 부유물이 떠오르면 국자로 떠서 제거해주세요.</li>
+        <li>설탕 3큰술과 올리고당 6큰술을 넣고 준비해둔 야채들도 함께 넣어주세요.</li>
+        <li>모든재료를 다 넣고 뚜껑을 덮어서 10분간 끓여주세요.</li>
+        <li>10분이 지나면 뚜껑열고 다진마늘 3큰술과 대파, 불린 당면을 넣습니다</li>
+        <li>뚜껑을 덮고 2분30초 동안 끓여내 주면 완성.</li>
+      </ol>
+    </section>
+  </article>
+  <aside><a href="https://www.10000recipe.com/shop/event.html?seq=170" target="_blank"><img width="200px" height="auto"
+        src="https://recipe1.ezmember.co.kr/cache/shop/2021/07/19/9774d72e7e4a7bcf25bef0a77e944c0b.jpg"></a>
+    <a href="https://www.10000recipe.com/shop/event.html?seq=302" target="_blank"><img width="200" height="70"
+        src="https://recipe1.ezmember.co.kr/cache/shop/2021/07/07/4c074510c81037e0b56aced924ac5f6f.jpg"></a>
+    <a href="https://www.10000recipe.com/shop/event.html?seq=154" target="_blank"><img width="200" height="70"
+        src="https://recipe1.ezmember.co.kr/cache/shop/2021/07/09/e37fdde9e8b1ffae5eb5ce50da1dd720.jpg"></a>
+  </aside>
+  <footer></footer>
+
+</body>
+
+</html>
