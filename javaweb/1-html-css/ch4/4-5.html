@@ -1,0 +1,61 @@
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    p {
+      width: 250px;
+      height: 150px;
+      border: 3px solid black;
+    }
+
+    p:nth-child(1) {
+      /* 요소(element)의 크기보다 컨텐츠가 클 때 숨김처리  */
+      /* overflow: 넘침 */
+      /* hidden: 숨김 */
+      overflow: hidden;
+    }
+
+    p:nth-child(2) {
+      overflow: scroll;
+    }
+
+    p:nth-child(3) {
+      overflow-y: scroll;
+    }
+
+    p::nth-child(4) {
+      overflow-y: auto;
+    }
+
+    p:nth-child(5) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      height: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque in error quas, voluptatibus numquam nihil
+    adipisci vero eum molestiae reiciendis vitae magni placeat nobis unde non nisi. Nihil, asperiores!
+
+  </p>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, vel inventore expedita possimus minima
+    temporibus officiis quod, incidunt ipsam quidem iste. Earum voluptate blanditiis laborum minus aut, tempore
+    asperiores ullam!</p>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate labore repellat temporibus magnam unde!
+    Repudiandae eos, unde hic vitae dolorum perferendis impedit asperiores quae facere sit, quis et, vel voluptatum.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo molestias tempora modi dolorum voluptates minus
+    obcaecati! Doloremque reprehenderit iure nisi voluptates perferendis vero dolor, inventore temporibus corrupti
+    deleniti assumenda eligendi.</p>
+  <p title="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque porro nihil architecto deserunt, voluptates, quia
+    tempore eum sed asperiores amet eligendi ab tenetur et debitis velit iure omnis distinctio sapiente.">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vero molestiae reprehenderit iusto illum
+    obcaecati odio inventore qui ex facilis fugit quaerat a non facere dolorem quod autem, officia ipsa?</p>
+
+
+</body>
+
+</html>

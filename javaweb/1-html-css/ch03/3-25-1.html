@@ -1,0 +1,90 @@
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    thead>tr {
+      background-color: green;
+      color: white;
+    }
+
+    /* first, second, third, fourth, fifth, sixth */
+    /* 섵낵자와 같은 레벨의 요소중 수열식에 맞는 요소를 선택 */
+
+    /* 2n-1: 1 3 5 7 9 11 ..... */
+    tbody>tr:nth-child(2n-1) {
+      background-color: aqua;
+    }
+
+    /* 2n: 2 4 6 ..... */
+    tbody>tr:nth-child(2n) {
+      background-color: aquamarine;
+    }
+
+    td:nth-child(2n) {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>head1-1</th>
+        <th>head1-2</th>
+        <th>head1-3</th>
+        <th>head1-4</th>
+        <th>head1-5</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>cell1-1</td>
+        <td>cell1-2</td>
+        <td>cell1-3</td>
+        <td>cell1-4</td>
+        <td>cell1-5</td>
+      </tr>
+      <tr>
+        <td>cell2-1</td>
+        <td>cell2-2</td>
+        <td>cell2-3</td>
+        <td>cell2-4</td>
+        <td>cell2-5</td>
+      </tr>
+      <tr>
+        <td>cell3-1</td>
+        <td>cell3-2</td>
+        <td>cell3-3</td>
+        <td>cell3-4</td>
+        <td>cell3-5</td>
+      </tr>
+      <tr>
+        <td>cell4-1</td>
+        <td>cell4-2</td>
+        <td>cell4-3</td>
+        <td>cell4-4</td>
+        <td>cell4-5</td>
+      </tr>
+      <tr>
+        <td>cell5-1</td>
+        <td>cell5-2</td>
+        <td>cell5-3</td>
+        <td>cell5-4</td>
+        <td>cell5-5</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
