@@ -1,0 +1,45 @@
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .container {
+            display: flex;
+            margin: 20px 0;
+            border: 1px solid red;
+        }
+
+        .item {
+            border: 1px solid black;       
+            text-align: center;
+        
+        }
+
+        .item-grow-shrink-auto {
+            flex: 1 1 100px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container" style="width: 500px">
+   
+    <div class="item-grow-shrink-auto">1</div>
+    <div class="item-grow-shrink-auto">2</div>
+    <div class="item-grow-shrink-auto">3</div>
+</div>
+
+<div class="container" style="width: 200px">
+    <div class="item-grow-shrink-auto">4</div>
+    <div class="item-grow-shrink-auto">5</div>
+    <div class="item-grow-shrink-auto">6</div>
+</div>
+
+<div class="container">
+    <div class="item-grow-shrink-auto">4</div>
+    <div class="item-grow-shrink-auto">5</div>
+    <div class="item-grow-shrink-auto">6</div>
+</div>
+</body>
+
+</html>
